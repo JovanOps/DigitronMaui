@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DigitronMaui.MainPage"
+             Title="Digitron (.NET MAUI)">
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="12">
+            <Label Text="Prvi broj" />
+            <Entry x:Name="EntryA" Placeholder="npr. 12,5 ili 12.5" Keyboard="Numeric" />
+
+            <Label Text="Drugi broj" />
+            <Entry x:Name="EntryB" Placeholder="npr. 3" Keyboard="Numeric" />
+
+            <Grid ColumnSpacing="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="0" Text="+" Clicked="OnOpClicked" CommandParameter="+" />
+                <Button Grid.Column="1" Text="−" Clicked="OnOpClicked" CommandParameter="-" />
+                <Button Grid.Column="2" Text="×" Clicked="OnOpClicked" CommandParameter="*" />
+                <Button Grid.Column="3" Text="÷" Clicked="OnOpClicked" CommandParameter="/" />
+            </Grid>
+
+            <HorizontalStackLayout Spacing="8">
+                <Label Text="Rezultat:" />
+                <Label x:Name="LblResult" Text="-" FontAttributes="Bold" />
+            </HorizontalStackLayout>
+
+            <Button Text="Clear" Clicked="OnClearClicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
